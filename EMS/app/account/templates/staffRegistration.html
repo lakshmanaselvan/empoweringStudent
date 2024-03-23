@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+{% if msg %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endif %}
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <h1>Staff Registration</h1>
+        <div class="card text-center" style="width: 35rem;">
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" class="btn btn-primary" value="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
